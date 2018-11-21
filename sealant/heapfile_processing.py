@@ -16,8 +16,8 @@ last_assigned_id - id последней созданной ноды кучи
 
 import json
 
-from mldlib.errors import NoResultCalcError, NoTimeStepError
-from mldlib.logger import log
+from sealant.errors import NoResultCalcError, NoTimeStepError
+from sealant.logger import log
 
 
 class HeapObject:

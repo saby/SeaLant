@@ -14,8 +14,8 @@ import pathlib
 from time import time, sleep
 import pychrome
 import requests
-from mldlib.config import MemoryLeakConfig
-from mldlib.logger import log
+from sealant.config import MemoryLeakConfig
+from sealant.logger import log
 
 
 conf = MemoryLeakConfig()

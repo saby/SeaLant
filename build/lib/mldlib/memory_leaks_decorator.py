@@ -11,12 +11,12 @@ import pathlib
 import shutil
 from time import sleep, time
 import xml.etree.ElementTree as xml
-from mldlib.cdp import DevToolsProtocolConnection
-from mldlib.config import MemoryLeakConfig
-from mldlib.errors import LeakError
-from mldlib.heapfile_processing import HeapObject, check_leak_with_timeline
-from mldlib.heapfile_processing import check_leak_with_snapshots
-from mldlib.logger import log, set_logger
+from sealant.cdp import DevToolsProtocolConnection
+from sealant.config import MemoryLeakConfig
+from sealant.errors import LeakError
+from sealant.heapfile_processing import HeapObject, check_leak_with_timeline
+from sealant.heapfile_processing import check_leak_with_snapshots
+from sealant.logger import log, set_logger
 
 conf = MemoryLeakConfig()
 

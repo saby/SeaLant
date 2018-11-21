@@ -9,7 +9,7 @@ from unittest import TestCase, main
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from mldlib import memleak
+from sealant import memleak
 from tests.PageObjects.page import MainPage
 
 

@@ -5,10 +5,10 @@ with open("README.md", "r") as fh:
 
 setup(
     name='sealant',
-    version='0.0.01a',
-    packages=['mldlib'],
-    url='E:\perf-git\memory-leak-detecting-open_source',
-    license='',
+    version='1.0.0',
+    packages=['sealant'],
+    url='E:\perf-git\sealant',
+    license='LICENSE.md',
     author='ae.udahin',
     author_email='',
     description=''

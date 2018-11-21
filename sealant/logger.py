@@ -7,7 +7,7 @@
 import logging
 import sys
 
-from mldlib.config import MemoryLeakConfig
+from sealant.config import MemoryLeakConfig
 
 conf = MemoryLeakConfig
 
