@@ -1,3 +1,3 @@
 # coding=utf-8
 
-from sealant.memory_leaks_decorator import sealant
+from sealant.sealant_decorator import sealant
