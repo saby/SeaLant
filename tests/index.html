@@ -1,0 +1,45 @@
+<html>
+
+<head>
+</head>
+<body>
+  <input id="grow" type="button" value="Memory Leak"/>
+  <input id="noleak" type="button" value="No Memory Leak"/>
+  <input id="clearleak" type="button" value="Clear Memory Leak"/>
+</body>
+  <script type="text/javascript">
+var x = [];
+
+function click_elem() {
+"123" == "123"
+
+}
+
+function grow() {
+    var div = document.createElement('div');
+	div.className = "alert alert-success";
+	div.innerHTML = "New element";
+	div.addEventListener('click', click_elem);
+	document.body.appendChild(div);
+  x.push(new Array(1000000).join('x'));
+}
+
+function noleak() {
+  var x=[];
+  x.push(new Array(1000000).join('x'));
+}
+
+function clearleak() {
+  x=[];
+}
+
+document.getElementById('grow').addEventListener('click', grow);
+document.getElementById('noleak').addEventListener('click', noleak);
+document.getElementById('clearleak').addEventListener('click', clearleak);
+  </script>
+
+
+
+</body>
+
+</html>

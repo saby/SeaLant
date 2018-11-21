@@ -1,0 +1,2 @@
+pychrome==0.2.2
+requests==2.19.1
