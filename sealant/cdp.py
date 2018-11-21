@@ -91,7 +91,7 @@ class DevToolsProtocolConnection:
         heap_profiler.addHeapSnapshotChunk = self._record_heapchunks_to_file
         heap_file_type = 'heaptimeline' if timeline else 'heapsnapshot'
         path = "{0}s/{1}/".format(heap_file_type, self.name)
-        print(pathlib.Path(path).mkdir(parents=True, exist_ok=True))
+        pathlib.Path(path).mkdir(parents=True, exist_ok=True)
         heap_file_name = '{0}%H_%M_%S.{1}'.format(path, heap_file_type)
         self.heap_file_name = datetime.strftime(datetime.now(), heap_file_name)
         self.heap_file_out = open(self.heap_file_name, 'w')

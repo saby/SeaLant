@@ -99,7 +99,6 @@ def check_leak_with_timeline(result, leak_size_limit):
     """
     Проверка наличия утечки в подаваемых на вход данных result.
     :param result: список с размерами кучи в каждом шаге таймлайна, КБ
-    :param steps: количество повторов тестируемой функции
     :param leak_size_limit: размер уставки для сигнализации об утечке памяти, КБ
     :return: размер утечки в КБ, наличие утечки
     """
@@ -140,9 +139,3 @@ def check_leak_with_snapshots(result, leak_size_limit):
     leak_size = a1 / a
     is_leak = True if leak_size > leak_size_limit else False
     return leak_size, is_leak
-
-if __name__ == '__main__':
-    heap = r"E:/perf-git/memory-leak-detecting-open_source/21_58_17.heaptimeline"
-    Leak = HeapObject(heap)
-    Leak.parsing_heap_file()
-    print(Leak.get_leak_size(period_dur=[62.484, 59.625,59.656,59.647,59.317]))

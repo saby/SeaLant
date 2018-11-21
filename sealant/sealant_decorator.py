@@ -42,7 +42,6 @@ def sealant(timeline=True, host='', port='', ws='',
     :param host: хост для подключения к ноде
     :param port: порт для подключения к ноде
     :param ws: адрес ws:// для подключения к ноде
-    :param node_js: нода - Node.js, проверка только размера утечки
     :param wait_func: активировать возможность использования метода cdp.wait_full_load
     """
     def wrapper(obj):
@@ -86,7 +85,7 @@ def _wrapper_for_test(obj, timeline, host, port, ws, wait_func,
     if conf.clear_conf_cdp:
         set_logger()
         conf.cdp = DevToolsProtocolConnection(host=host, port=port,
-                                                        ws=ws)
+                                              ws=ws)
     cdp = obj.cdp = conf.cdp
     cdp.name = obj.__name__
     host_name = host or cdp.class_host or conf.host
@@ -116,7 +115,6 @@ def _wrapper_for_test(obj, timeline, host, port, ws, wait_func,
         leaksize, leak = result
         log('Leak is {:.2f} KB'.format(leaksize))
         if result_metric[0]:
-            print(result_metric)
             result_metric.append(cdp.get_metrics())
             for j in range(len(result_metric)):
                 dif = (result_metric[1][j] - result_metric[0][j]) / step_repeat
@@ -133,13 +131,13 @@ def _wrapper_for_test(obj, timeline, host, port, ws, wait_func,
             _create_xml_report(cdp, leaksize, dif_result_metrics, heap_type)
             need_zip = True
         if conf.save_leaked_heapfile:
-            print(pathlib.Path('leaks').mkdir(parents=True, exist_ok=True))
+            pathlib.Path('leaks').mkdir(parents=True, exist_ok=True)
             path = "{0}s/{1}".format(heap_type, cdp.name)
             heap_file_location = '{0}leaks/{1}'.format(conf.path_to_save,
                                                        cdp.name)
             need_zip = True
         if need_zip:
-            print(shutil.make_archive(heap_file_location, format='zip', root_dir=path))
+            shutil.make_archive(heap_file_location, format='zip', root_dir=path)
         shutil.rmtree('{}s'.format(heap_type))
         raise LeakError("В тесте есть утечка")
     shutil.rmtree('{}s'.format(heap_type))
