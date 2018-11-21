@@ -15,7 +15,7 @@ pip install sealant
 
 Минимальный набор действий для подключения библиотеки:
 ```python
-from mldlib import memleak
+from mldlib import sealant
 from unittest import TestCase
 
 ...
@@ -28,7 +28,7 @@ class TestsCaseExample(TestCase):
 
     # Перед тестом необходимо уже иметь запущенную ноду, библиотека
     # подключается к ней перед запуском метода test_case
-    @memleak()
+    @sealant()
     def test_case(self):
         some_actions()
 ```
@@ -40,7 +40,7 @@ class TestsCaseExample(TestCase):
 При необходимости можно указать другие хост/порт ноды или прямую
 ccылку websocket
 ```python
-    @memleak(host='not_localhost', port='2229', ws='ws://direct_ws:9222')
+    @sealant(host='not_localhost', port='2229', ws='ws://direct_ws:9222')
     def test_case(self):
         actions()
 ```
@@ -48,11 +48,11 @@ ccылку websocket
 
 Допустим вариант указания настроек подключения для целого класса:
 ```python
-@memleak(host='not_localhost', port='2229')
+@sealant(host='not_localhost', port='2229')
 class TestsCaseExample(TestCase):
 
 ...
-    @memleak()
+    @sealant()
     def test_case(self):
         actions()
 ```
@@ -67,7 +67,7 @@ heaptimeline или heapsnapshot. По умолчанию используетс
 более быстрый и показавший большую стабильность способ. Но для Node.js
 допустим только вариант с heapsnapshot:
 ```python
-    @memleak(timeline=False)
+    @sealant(timeline=False)
     def test_case(self):
         actions()
 ```

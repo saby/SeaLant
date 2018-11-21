@@ -6,9 +6,9 @@
 """
 import logging
 import sys
-from sealant.config import MemoryLeakConfig
+from sealant.config import SeaLantConfig
 
-conf = MemoryLeakConfig
+conf = SeaLantConfig
 
 
 def log(*args, **kwargs):

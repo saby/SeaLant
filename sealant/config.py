@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-class MemoryLeakConfig(object):
+class SeaLantConfig(object):
     """
     Конфигурация.
     Можно подключить метрики, которые будут сниматься перед и после тестов

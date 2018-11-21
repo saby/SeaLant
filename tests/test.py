@@ -9,7 +9,7 @@ from unittest import TestCase, main
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from sealant import memleak
+from sealant import sealant
 from tests.PageObjects.page import MainPage
 
 
@@ -33,22 +33,22 @@ class TestsCaseExample(TestCase):
     def setUp(self):
         self.page = MainPage(self.driver)
 
-    @memleak(timeline=True)
+    @sealant(timeline=True)
     def test_leak_timeline(self):
         """Есть утечка, замер таймлайном"""
         self.page.click_leak_button()
 
-    @memleak(timeline=False)
+    @sealant(timeline=False)
     def test_leak_snap(self):
         """Есть утечка, замер снэпшотом"""
         self.page.click_leak_button()
 
-    @memleak(timeline=True)
+    @sealant(timeline=True)
     def test_no_leak_timeline(self):
         """Нет утечки, замер таймлайном"""
         self.page.click_no_leak_button()
 
-    @memleak(timeline=False)
+    @sealant(timeline=False)
     def test_no_leak_snap(self):
         """Нет утечки, замер снэпшотом"""
         self.page.click_no_leak_button()

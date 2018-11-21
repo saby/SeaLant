@@ -14,11 +14,11 @@ import pathlib
 from time import time, sleep
 import pychrome
 import requests
-from sealant.config import MemoryLeakConfig
+from sealant.config import SeaLantConfig
 from sealant.logger import log
 
 
-conf = MemoryLeakConfig()
+conf = SeaLantConfig()
 
 
 class DevToolsProtocolConnection:

@@ -12,13 +12,13 @@ import shutil
 from time import sleep, time
 import xml.etree.ElementTree as xml
 from sealant.cdp import DevToolsProtocolConnection
-from sealant.config import MemoryLeakConfig
+from sealant.config import SeaLantConfig
 from sealant.errors import LeakError
 from sealant.heapfile_processing import HeapObject, check_leak_with_timeline
 from sealant.heapfile_processing import check_leak_with_snapshots
 from sealant.logger import log, set_logger
 
-conf = MemoryLeakConfig()
+conf = SeaLantConfig()
 
 
 def memleak(timeline=True, host='', port='', ws='',
