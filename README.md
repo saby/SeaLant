@@ -15,9 +15,8 @@ pip install sealant
 
 Минимальный набор действий для подключения библиотеки:
 ```python
-...
-
 from mldlib import memleak
+from unittest import TestCase
 
 ...
 
