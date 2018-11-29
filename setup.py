@@ -11,5 +11,10 @@ setup(
     license='LICENSE.md',
     author='ae.udahin',
     author_email='',
-    description=''
+    description='',
+    install_requires=[
+        'pychrome >= 0.2.2'
+        'requests >= 2.19.1'
+        'selenium >= 3.13.0'
+    ]
 )
