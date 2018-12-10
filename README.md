@@ -85,8 +85,7 @@ heaptimeline или heapsnapshot. По умолчанию используетс
 heapfiles пакуются в zip архив и помещаются в заданную в config.py папку
 (по умолчанию создается папка leaks в папке с тестом).
 # Версионирование
-Мы используем [SemVer](http://semver.org/) для версионирования. Доступные версии
-указаны в  [тэгах этого репозитория](https://github.com/your/project/tags). 
+Мы используем [SemVer](http://semver.org/) для версионирования. 
 # Авторы
 Юдахин А.Е  
 e-mail: aejudakhin@gmail.com  
@@ -96,5 +95,3 @@ e-mail: sv.dokuchaev@tensor.ru
 
 # Лицензия
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-test2
